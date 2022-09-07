@@ -1,30 +1,31 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import Main from './components/Main'
-import Sidebar from './components/Sidebar'
+import { useEffect, useState } from "react"
+import "./App.css"
+import Main from "./components/Main"
+import Sidebar from "./components/Sidebar"
 import uuid from "react-uuid"
 
 function App() {
-
-  const [notes, setNotes] = useState( JSON.parse(localStorage.getItem("notes")) || [])
+  const [notes, setNotes] = useState(
+    JSON.parse(localStorage.getItem("notes")) || []
+  )
   const [activeNote, setActiveNote] = useState(false)
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes))
-  },[notes])
+  }, [notes])
 
   useEffect(() => {
     setActiveNote(notes[0].id)
-  },[notes])
+  }, [notes])
 
   const onAddNote = () => {
     const newNote = {
       id: uuid(),
       title: "新しいノート",
       content: "",
-      modDate: Date.now()
+      modDate: Date.now(),
     }
-    setNotes([...notes,newNote])
+    setNotes([...notes, newNote])
   }
 
   const onDeleteNote = (id) => {
@@ -38,7 +39,7 @@ function App() {
 
   const onUpdateNote = (updatedNote) => {
     const updateNoteArray = notes.map((note) => {
-      if (note.id === updatedNote.id){
+      if (note.id === updatedNote.id) {
         return updatedNote
       } else {
         return note
@@ -50,17 +51,14 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar 
-        onAddNote = {onAddNote}
+      <Sidebar
+        onAddNote={onAddNote}
         notes={notes}
         onDeleteNote={onDeleteNote}
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main
-        activeNote={getActiveNote()}
-        onUpdateNote={onUpdateNote}
-      />
+      <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
     </div>
   )
 }

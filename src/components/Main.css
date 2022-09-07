@@ -1,14 +1,14 @@
-.app-main{
+.app-main {
   width: 70%;
   height: 100vh;
 }
 
 .app-main-note-edit,
-.app-main-note-preview{
+.app-main-note-preview {
   height: 50vh;
 }
 
-.app-main-note-edit{
+.app-main-note-edit {
   padding: 25px;
 }
 
@@ -29,10 +29,10 @@ textarea {
   font-size: 2rem;
 }
 
-.app-main-note-preview{
+.app-main-note-preview {
   height: 50vh;
   overflow-y: scroll;
-  background: rgba(0, 0, 0, .04);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .preview-title {
@@ -45,7 +45,7 @@ textarea {
   line-height: 2rem;
 }
 
-.no-active-note{
+.no-active-note {
   width: 70%;
   height: 100vh;
   line-height: 100vh;

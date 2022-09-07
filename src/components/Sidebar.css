@@ -1,27 +1,27 @@
-button{
+button {
   background: none;
   border: none;
   color: #08c;
   margin: 0;
   padding: 0;
 }
-.app-sidebar{
+.app-sidebar {
   width: 30%;
   height: 100vh;
   border-right: solid 1px #ddd;
 }
 
-.app-sidebar-header{
+.app-sidebar-header {
   display: flex;
   justify-content: space-between;
   padding: 25px;
 }
 
-.app-sidebar-header h1{
+.app-sidebar-header h1 {
   margin: 0;
 }
 
-.app-sidebar-notes{
+.app-sidebar-notes {
   height: calc(100vh - 136px);
   overflow-y: scroll;
 }
@@ -29,7 +29,7 @@ button{
 .app-sidebar-note {
   padding: 25px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .sidebar-note-title {
@@ -52,4 +52,3 @@ button{
 .app-sidebar-note.active {
   background: #afadad;
 }
-
